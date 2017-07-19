@@ -1,0 +1,12 @@
+<div style="text-align: left">
+  <input type="text" [(ngModel)]="article" placeholder="Article">
+  <input type="number" [(ngModel)]="val" placeholder="Value">
+  <app-primary-button (clickEvent)="calculate()" [value]="'Vat ' + vat +'%'" ></app-primary-button>
+  <br>
+  <br>
+  <div *ngIf="total">
+    <span>The {{article}} costs {{ val | currency:'USD':true:'1.2' }} </span><br>
+    <span>The Vat is {{ totalVat | currency:'USD':true:'1.2' }}</span><br> 
+    <span>The total is {{total | currency:'USD':true:'1.2'}} </span> 
+  </div>
+</div> 
